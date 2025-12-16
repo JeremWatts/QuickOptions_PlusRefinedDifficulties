@@ -1,0 +1,88 @@
+DefaultListMenu
+{
+	Font "BigFont", "Untranslated"
+	LineSpacing 20
+//	Selector "graphics/m_selector.png", -32, -5
+	Font "BigUpper", "White"
+	LineSpacing 18
+}
+
+//-------------------------------------------------------------------------------------------
+//
+//
+//
+//-------------------------------------------------------------------------------------------
+
+ListMenu "MainMenu"
+{
+	LineSpacing 16
+	Position -20, 112
+	TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
+	TextItem "$Quick Options",	"v",		"QuickOptions"
+	TextItem "$MNU_OPTIONS", "o", "OptionsMenu+"
+	TextItem "$MNU_QUITGAME", "q", "QuitMenu"
+}
+
+OptionMenu "QuickOptions"
+{
+//	StaticText "Audio"
+	Slider "$MODMNU_MASTERVOLUME",		"snd_mastervolume", 0, 1, 0.05, 2
+	Slider "$SNDMNU_MUSICVOLUME",		"snd_musicvolume", 0, 1, 0.05, 2
+	Slider "$SNDMNU_SFXVOLUME",			"snd_sfxvolume", 0, 1, 0.05, 2
+	StaticText 	""
+//	StaticText "Visual"
+	Option "$OPTMNU_LANGUAGE",					"language", "LanguageOptions"
+	Slider "$DSPLYMNU_FOV",						"fov",							75.0, 120.0, 0.1, 1
+	Option "$VIDMNU_FULLSCREEN",		"vid_fullscreen", "YesNo"
+//	ScaleSlider "$HUDMNU_UISCALE",				"uiscale", 0.0, 8.0, 1.0, "$SCALEMNU_ADAPT"
+	Option "$HUDMNU_CROSSHAIRON",			"crosshairon", "OnOff"
+	Slider "$HUDMNU_CROSSHAIRSCALE",		"crosshairscale", 0.0, 2.0, 0.05, 2
+	Slider "$DSPLYMNU_MOVEBOB",				"movebob", 0, 1.0, 0.05, 2
+	StaticText 	""
+//	StaticText 	"Control"
+	Slider "$MOUSEMNU_SENSITIVITY_X",	"m_sensitivity_x", 0.5, 8, 0.25
+	Slider "$MOUSEMNU_SENSITIVITY_Y",	"m_sensitivity_y", 0.5, 8, 0.25
+	Option "$MOUSEMNU_INVERTMOUSE",		"invertmouse", "OnOff"
+	Control    "$CNTRLMNU_QUICKSAVE"       , "quicksave"
+	Control    "$CNTRLMNU_QUICKLOAD"       , "quickload"
+	Option "$MISCMNU_QUICKSAVEROTATION",		"quicksaverotation", "OnOff"
+//	Slider "$MISCMNU_QUICKSAVECOUNT",			"quicksaverotationcount", 1, 20, 1, 0
+//	StaticText 	""
+//	StaticText 	"Motion Sickness"
+//	Slider "$DSPLYMNU_MOVEBOB",				"movebob", 0, 1.0, 0.05, 2
+//	Slider "$HUDMNU_CROSSHAIRSCALE",		"crosshairscale", 0.0, 2.0, 0.05, 2
+//	StaticText 	"Large Static images reduce Motion Sickness"
+//	Option "$PLYRMNU_ALWAYSRUN", cl_run, "OnOff"
+//	Slider "$DSPLYMNU_FOV",						"fov",							75.0, 120.0, 0.1, 1
+//	StaticText 	"Higher FOV reduces Motion Sickness"
+}
+
+OptionMenu "OptionsMenu+" 
+{
+Title "$OPTMNU_TITLE"
+Submenu "$OS_TITLE", "os_Menu"
+Submenu "$OPTMNU_CONTROLS", "CustomizeControls"
+Submenu "$OPTMNU_MOUSE", "MouseOptions"
+Submenu "$OPTMNU_JOYSTICK", "JoystickOptions"
+Submenu "$OPTMNU_PLAYER", "NewPlayerMenu"
+StaticText " "
+Submenu "$OPTMNU_DISPLAY", "VideoOptions"
+Submenu "$OPTMNU_VIDEO", "VideoModeMenu"
+Submenu "$OPTMNU_GAMEPLAY", "GameplayOptions"
+Submenu "$OPTMNU_COMPATIBILITY", "CompatibilityOptions"
+Submenu "$OPTMNU_AUTOMAP", "AutomapOptions"
+Submenu "$OPTMNU_HUD", "HUDOptions"
+Submenu "$OPTMNU_MISCELLANEOUS", "MiscOptions"
+Submenu "$OPTMNU_NETWORK", "NetworkOptions"
+Submenu "$OPTMNU_SOUND", "SoundOptions"
+StaticText " "
+SafeCommand "$OPTMNU_DEFAULTS", "reset2defaults"
+SafeCommand "$OPTMNU_RESETTOSAVED", "reset2saved"
+SafeCommand "$OPTMNU_WRITEINI", "writeini"
+
+Command "$OPTMNU_CONSOLE", "menuconsole"
+Command "$OPTMNU_OPENCONFIG", "openconfig"
+Command "$OPTMNU_OPENSCREENSHOTS", "openscreenshots"
+Command "$OPTMNU_OPENSAVES", "opensaves"
+StaticText " "
+}
