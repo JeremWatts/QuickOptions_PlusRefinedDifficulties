@@ -27,6 +27,6 @@ The position of the menu was changed to resemble valve layouts.
 
 
 ```
-if you benefit from this mod, consider buying me a coffee through kofi
+if you benefit from this mod, please buy me a coffee through kofi
 https://ko-fi.com/jerem_watts
 ```
