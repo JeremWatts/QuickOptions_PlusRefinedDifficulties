@@ -1,0 +1,101 @@
+
+clearskills
+
+
+skill empty
+{
+   name = "No Monsters"
+   SpawnFilter = 0
+   MustConfirm = "No monsters?"
+   textcolor = white
+}
+
+
+skill Baby // auto regen and health item overheal would be good // this feels like a MUCH better version of normal. perfect.
+{
+//+INSTANTWEAPONSWITCH
+	TotalInfighting
+	EasyKey
+   AutoUseHealth
+   DamageFactor = 0.2
+   MonsterHealth = 0.2
+   EasyBossBrain
+   FastMonsters
+   SpawnFilter = nightmare
+   name = "Power-Fantasy"
+   MustConfirm = "Nightmare spawns. Fast monsters. Receive fifth damage. Enemies have x0.2 total HP. TotalInfighting enabled."
+   textcolor = white
+}
+
+skill Normal // this serves the function of being a boring difficulty perfectly
+{
+//+INSTANTWEAPONSWITCH
+	EasyKey
+   AutoUseHealth
+   DamageFactor = 1
+   MonsterHealth = 1
+   EasyBossBrain
+   SpawnFilter = normal
+   name = "Normal"
+   MustConfirm = "Normal?"
+   textcolor = white
+}
+
+skill hard // SURVIVAL // this is great
+{
+//+INSTANTWEAPONSWITCH
+	TotalInfighting
+	EasyKey
+   MonsterHealth = 0.3
+ //  AmmoFactor = 0.2
+   FastMonsters
+ //  RespawnTime = 120
+   SpawnFilter = baby
+   ReplaceActor = "HealthBonus", "HealthBonus"
+  ReplaceActor = "Medikit", "HealthBonus"
+   ReplaceActor = "Stimpack", "HealthBonus"
+ReplaceActor = "Soulsphere", "Stimpack"
+ReplaceActor = "Megasphere", "Stimpack"
+ReplaceActor = "ArmorBonus", "RocketAmmo"
+ReplaceActor = "GreenArmor", "RocketAmmo"
+ReplaceActor = "BlueArmor", "Clip"
+//ReplaceActor = "Clip", "Pistol"
+ReplaceActor = "ClipBox", "Clip"
+ReplaceActor = "Shell", "HealthBonus"
+ReplaceActor = "ShellBox", "Shell"
+ReplaceActor = "RocketAmmo", "HealthBonus"
+ReplaceActor = "RocketBox", "RocketAmmo"
+ReplaceActor = "Cell", "HealthBonus"
+ReplaceActor = "CellPack", "RocketAmmo"
+ReplaceActor = "Backpack", "RocketLauncher"
+ReplaceActor = "Chainsaw", "Shell"
+ReplaceActor = "Shotgun", "SuperShotgun"
+ReplaceActor = "SuperShotgun", "SuperShotgun"
+ReplaceActor = "Chaingun", "SuperShotgun"
+ReplaceActor = "RocketLauncher", "RocketLauncher"
+ReplaceActor = "PlasmaRifle", "RocketLauncher"
+ReplaceActor = "BFG9000", "RocketLauncher"
+ReplaceActor = "LostSoul", "HealthBonus"
+ReplaceActor = "Demon", "HealthBonus"
+ReplaceActor = "Cacodemon", "HealthBonus"
+ReplaceActor = "ZombieMan", "LostSoul"
+ReplaceActor = "ShotgunGuy", "Demon"
+ReplaceActor = "ChaingunGuy", "Cacodemon"
+   name = "Survival"
+   MustConfirm = "Severe item scarcity. Few monsters. Zombiemen replaced with lostsouls, cacos & pinkies. Enemies have x0.3 total HP." //Enemies Respawn after 120s. <- i think this mode is crazy enough without this
+   Key = "s"
+   textcolor = white
+}
+
+skill nightmare
+{
+   AmmoFactor = 2
+   FastMonsters
+   DisableCheats
+   RespawnTime = 12
+   SpawnFilter = Nightmare
+   name = "Nightmare"
+   MustConfirm
+   Key = "n"
+   textcolor = white
+}
