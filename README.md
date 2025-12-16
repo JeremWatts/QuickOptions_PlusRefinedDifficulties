@@ -23,3 +23,10 @@ The position of the menu was changed to resemble valve layouts.
 -  Normal is surprisingly good at making other difficulties more enjoyable.
 -  Survival is a challenging redesign requiring you to pace yourself. Pickups & weapons are remixed and very scarce. Monsters are weaker, remixed, fast and reduced in quantity. Hitscanner enemies are severely reduced.
 -  Nightmare feels like it belongs here, but I'm open to changing that.
+
+
+
+```
+if you benefit from this mod, consider buying me a coffee through kofi
+https://ko-fi.com/jerem_watts
+```
