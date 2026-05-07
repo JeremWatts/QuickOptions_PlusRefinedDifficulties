@@ -1,3 +1,6 @@
+- note to self: seperate this into two different mods.
+
+
 
 
 ```
